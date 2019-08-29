@@ -9,9 +9,11 @@ public class Deck : MonoBehaviour
     public List<GameObject> cards;
     int startingDeckSize = 10;
     int handSize = 5;
+//    private static CardManager cardManager;
 
     void Start()
     {
+//        cardManager = FindObjectOfType<CardManager>();
         numberOfCards = startingDeckSize;
         DrawHand();
     }
@@ -19,7 +21,10 @@ public class Deck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(numberOfCards==0)
+        {
+
+        }
     }
 
     public Hand hand;
@@ -38,5 +43,10 @@ public class Deck : MonoBehaviour
         }
     }
 
-    
+    public DiscardPile discardPile;
+    public void DrawDiscard()
+    {
+        cards = discardPile.discardPile;
+        discardPile.discardPile.Clear();
+    }
 }

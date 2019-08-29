@@ -7,10 +7,11 @@ public class Hand : MonoBehaviour
     public int numberOfCards;
     public List<GameObject> cards;
     bool endRound = false;
+//    private static CardManager cardManager;
 
     void Start()
     {
-        
+//       cardManager = FindObjectOfType<CardManager>();
     }
 
     // Update is called once per frame
@@ -26,6 +27,7 @@ public class Hand : MonoBehaviour
 
     public DiscardPile discardPile;
     public Deck deck;
+
     public void RoundEnd()
     {
         numberOfCards = cards.Count;

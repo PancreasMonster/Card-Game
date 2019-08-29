@@ -5,16 +5,26 @@ using UnityEngine;
 public class DiscardPile : MonoBehaviour
 {
     public List<GameObject> discardPile;
-
+//    private static CardManager cardManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+//           cardManager = FindObjectOfType<CardManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public Deck deck;
+
+    void ShuffleDiscardIntoHand()
+    {
+        System.Random rnd = new System.Random();
+        Shuffle.ShuffleList(discardPile, rnd);          //shuffle discard pile
+        deck.DrawDiscard();
+
     }
 }
