@@ -1,0 +1,34 @@
+Mercantile (thinking middle-eastern, arabian nights, turkish bazaar vibes):
+
+-Extreme focus on Projects and actions, actions might cost production instead of energy
+-Units are neglected in favor of powerful actions to control the enemy board
+-Maybe only 1 unit available to faction, namely whatever the legendary unit would be
+-other units can be summoned from actions, like recruiting random or semi-random unit cards from other factions
+-projects focus on creating gold in order to fuel the faction's actions to make up for the loss of units
+-actions to crowd control, buy off (take control of), and kill (maybe betrayal-like cards) enemy units
+-Theme is focused on gold, spending your way to victory
+
+
+Some Kind of Horse-Lord Faction (not sure how this is going to work in a space-setting, maybe with like landspeeders or something?)
+
+-Horse-Lord theme, so think mongols, rohirrim etc.
+-Focus on cavalry units (not sure what that entails, cavalry in space is a bit retarded. Maybe like small, single-pilot space ships?)
+-All cavalry units gain either rush or charge (depending on balancing)
+-Projects to discount/buff/summon cavalry units (like the idea of a different war-horn for each abilitie, with different audio cues)
+-essentially a very high-aggro zoo deck
+-maybe instead of a single legendary unit this faction gets several (tribe-like, nomadic people, each tribe has its own legendary leader)
+	-therefore legendaries cheaper, have different effects on allied units based on the tribes personality/combat style e.g. windfury, damage when attacking heroes, damage when attacking enemy units, cleave etc.)
+
+
+Engineer Race I think was in the other Doc:
+
+-Must be Dwarf/Gnome Based
+
+
+Some sort of Time-Manipulation Based Faction:
+
+-Picturing ethereals from wow
+-"time manipulation" could be anything from abilities to 'freeze' minions in time, to projects that grant an extra turn, or an extra card draw or something
+-maybe another ability which sets the opponent back by a turn, which would have more/less impact depending on what we plan to have happen each turn
+-units could be evasive or take half damage (some sort of 'predicting the future' explanation for that)
+-like the idea of a 'vision of the futures' mechanic, which could give glimpses at the opponents hand, or their card draws
