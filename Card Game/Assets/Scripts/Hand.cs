@@ -5,7 +5,7 @@ using UnityEngine;
 public class Hand : MonoBehaviour
 {
     public int numberOfCards;
-    public LinkedList<Card> cards;
+    public List<GameObject> cards;
 
 
     void Start()
