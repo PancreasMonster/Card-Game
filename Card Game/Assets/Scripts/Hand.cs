@@ -16,7 +16,7 @@ public class Hand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        numberOfCards = cards.Count;
+        
         if (Input.GetKeyDown(KeyCode.R) && endRound == false)
         {
             RoundEnd();
@@ -25,14 +25,17 @@ public class Hand : MonoBehaviour
     }
 
     public DiscardPile discardPile;
-    void RoundEnd()
+    public Deck deck;
+    public void RoundEnd()
     {
+        numberOfCards = cards.Count;
         for (int h = 0; h < numberOfCards; h++)
         {
             discardPile.discardPile.Add(cards[0]);
-            DestroyImmediate(cards[0], true);
             cards.Remove(cards[0]);
         }
+
         endRound = false;
+        deck.DrawHand();
     }
 }

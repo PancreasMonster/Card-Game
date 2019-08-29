@@ -1503,58 +1503,62 @@ PrefabInstance:
         type: 3}
       propertyPath: cards.Array.data[0]
       value: 
-      objectReference: {fileID: 2436528904045310835, guid: 7a47690ac88d00343a5fb22ee7887061,
+      objectReference: {fileID: 5130973325519338727, guid: 7a47690ac88d00343a5fb22ee7887061,
         type: 3}
     - target: {fileID: 4773231965428408365, guid: d26ae726b1b3aed44b5c10ae0ad64e5f,
         type: 3}
       propertyPath: cards.Array.data[1]
       value: 
-      objectReference: {fileID: 2436528904045310835, guid: 7a47690ac88d00343a5fb22ee7887061,
+      objectReference: {fileID: 5130973325519338727, guid: 7a47690ac88d00343a5fb22ee7887061,
         type: 3}
     - target: {fileID: 4773231965428408365, guid: d26ae726b1b3aed44b5c10ae0ad64e5f,
         type: 3}
       propertyPath: cards.Array.data[2]
       value: 
-      objectReference: {fileID: 2436528904045310835, guid: 7a47690ac88d00343a5fb22ee7887061,
+      objectReference: {fileID: 5130973325519338727, guid: 7a47690ac88d00343a5fb22ee7887061,
         type: 3}
     - target: {fileID: 4773231965428408365, guid: d26ae726b1b3aed44b5c10ae0ad64e5f,
         type: 3}
       propertyPath: cards.Array.data[3]
       value: 
-      objectReference: {fileID: 2436528904045310835, guid: 7a47690ac88d00343a5fb22ee7887061,
+      objectReference: {fileID: 5130973325519338727, guid: 7a47690ac88d00343a5fb22ee7887061,
         type: 3}
     - target: {fileID: 4773231965428408365, guid: d26ae726b1b3aed44b5c10ae0ad64e5f,
         type: 3}
       propertyPath: cards.Array.data[4]
       value: 
-      objectReference: {fileID: 2436528904045310835, guid: 7a47690ac88d00343a5fb22ee7887061,
+      objectReference: {fileID: 5130973325519338727, guid: 7a47690ac88d00343a5fb22ee7887061,
         type: 3}
     - target: {fileID: 4773231965428408365, guid: d26ae726b1b3aed44b5c10ae0ad64e5f,
         type: 3}
       propertyPath: cards.Array.data[5]
       value: 
-      objectReference: {fileID: 2436528904045310835, guid: 7a47690ac88d00343a5fb22ee7887061,
+      objectReference: {fileID: 5130973325519338727, guid: 7a47690ac88d00343a5fb22ee7887061,
         type: 3}
     - target: {fileID: 4773231965428408365, guid: d26ae726b1b3aed44b5c10ae0ad64e5f,
         type: 3}
       propertyPath: cards.Array.data[6]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5130973325519338727, guid: 7a47690ac88d00343a5fb22ee7887061,
+        type: 3}
     - target: {fileID: 4773231965428408365, guid: d26ae726b1b3aed44b5c10ae0ad64e5f,
         type: 3}
       propertyPath: cards.Array.data[7]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5130973325519338727, guid: 7a47690ac88d00343a5fb22ee7887061,
+        type: 3}
     - target: {fileID: 4773231965428408365, guid: d26ae726b1b3aed44b5c10ae0ad64e5f,
         type: 3}
       propertyPath: cards.Array.data[8]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5130973325519338727, guid: 7a47690ac88d00343a5fb22ee7887061,
+        type: 3}
     - target: {fileID: 4773231965428408365, guid: d26ae726b1b3aed44b5c10ae0ad64e5f,
         type: 3}
       propertyPath: cards.Array.data[9]
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5130973325519338727, guid: 7a47690ac88d00343a5fb22ee7887061,
+        type: 3}
     - target: {fileID: 4773231965428408365, guid: d26ae726b1b3aed44b5c10ae0ad64e5f,
         type: 3}
       propertyPath: hand
@@ -2009,6 +2013,18 @@ Transform:
   m_Father: {fileID: 1126334060}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1671752621 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4773231965428408365, guid: d26ae726b1b3aed44b5c10ae0ad64e5f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1200299960}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2730d8900db98149956a92925d199bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1689210671 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1761536657400574759, guid: bfc8e138940cfd6499d5293ac0debf67,
@@ -2449,6 +2465,11 @@ PrefabInstance:
       propertyPath: discardPile
       value: 
       objectReference: {fileID: 1689210671}
+    - target: {fileID: 2794385376634206420, guid: ae0b543d5532ea845b12f089da15bbad,
+        type: 3}
+      propertyPath: deck
+      value: 
+      objectReference: {fileID: 1671752621}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae0b543d5532ea845b12f089da15bbad, type: 3}
 --- !u!1 &2135877229
