@@ -11,17 +11,17 @@ public class Hand : MonoBehaviour
 
     void Start()
     {
-//       cardManager = FindObjectOfType<CardManager>();
+        //       cardManager = FindObjectOfType<CardManager>();
+        numberOfCards = cards.Count;
     }
 
     // Update is called once per frame
     void Update()
-    {
-        
+    {       
         if (Input.GetKeyDown(KeyCode.R) && endRound == false)
-        {
-            RoundEnd();
+        { 
             endRound = true;
+            RoundEnd();
         }
     }
 
@@ -31,13 +31,18 @@ public class Hand : MonoBehaviour
     public void RoundEnd()
     {
         numberOfCards = cards.Count;
+
         for (int h = 0; h < numberOfCards; h++)
         {
             discardPile.discardPile.Add(cards[0]);
             cards.Remove(cards[0]);
         }
-
-        endRound = false;
+        if(deck.numberOfCards<5)
+        {
+            discardPile.ShuffleDiscard();
+            deck.DrawDiscard();
+        }
         deck.DrawHand();
+        endRound = false;
     }
 }

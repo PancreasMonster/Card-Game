@@ -20,11 +20,13 @@ public class DiscardPile : MonoBehaviour
 
     public Deck deck;
 
-    public void ShuffleDiscardIntoDeck()
+    public void ShuffleDiscard()
     {
+        Debug.Log("before shuffle " + discardPile.Count);
+
         System.Random rnd = new System.Random();
         Shuffle.ShuffleList(discardPile, rnd);          //shuffle discard pile
-        deck.DrawDiscard();
+        Debug.Log("after shuffle " + discardPile.Count);
 
     }
 }
