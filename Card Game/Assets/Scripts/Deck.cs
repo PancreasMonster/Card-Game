@@ -5,11 +5,13 @@ using UnityEngine;
 public class Deck : MonoBehaviour
 {
     
-    public int numberOfCards;
     public List<GameObject> cards;
+    public int numberOfCards;
     int startingDeckSize = 10;
     int handSize = 5;
-//    private static CardManager cardManager;
+    public DiscardPile discardPile;
+
+    //    private static CardManager cardManager;
 
     void Start()
     {
@@ -23,7 +25,7 @@ public class Deck : MonoBehaviour
     {
         if(numberOfCards==0)
         {
-
+            discardPile.ShuffleDiscardIntoDeck();
         }
     }
 
@@ -43,7 +45,6 @@ public class Deck : MonoBehaviour
         }
     }
 
-    public DiscardPile discardPile;
     public void DrawDiscard()
     {
         cards = discardPile.discardPile;

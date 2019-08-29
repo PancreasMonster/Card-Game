@@ -20,7 +20,7 @@ public class DiscardPile : MonoBehaviour
 
     public Deck deck;
 
-    void ShuffleDiscardIntoHand()
+    public void ShuffleDiscardIntoDeck()
     {
         System.Random rnd = new System.Random();
         Shuffle.ShuffleList(discardPile, rnd);          //shuffle discard pile
