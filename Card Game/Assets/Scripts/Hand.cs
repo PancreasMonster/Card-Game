@@ -35,8 +35,8 @@ public class Hand : MonoBehaviour
         
         for (int h = 0; h < numberOfCards; h++)
         {
-            discardPile.discardPile.Add(cards[0]);
             cardToDestroy = cards[0];
+            discardPile.discardPile.Add(cardToDestroy.gameObject);
             Destroy(cardToDestroy.gameObject);
             //cards.Remove(cards[0]);
         }

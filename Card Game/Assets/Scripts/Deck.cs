@@ -28,7 +28,6 @@ public class Deck : MonoBehaviour
         //    discardPile.ShuffleDiscard();
         //    DrawDiscard();
         //    numberOfCards = cards.Count;
-
         //}
     }
 
@@ -42,7 +41,7 @@ public class Deck : MonoBehaviour
             GameObject firstCard = Instantiate(cards[0], new Vector3(cardPosition.x + (c - 1), cardPosition.y, cardPosition.z), Quaternion.identity).gameObject;
             firstCard.transform.rotation = Quaternion.Euler(0, -90, -90);
             firstCard.transform.parent = hand.gameObject.transform;
-            hand.cards.Add(cards[0]);
+            hand.cards.Add(firstCard);
             cards.Remove(cards[0]);
             numberOfCards--;
         }
