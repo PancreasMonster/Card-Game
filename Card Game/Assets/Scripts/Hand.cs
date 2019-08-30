@@ -27,16 +27,20 @@ public class Hand : MonoBehaviour
 
     public DiscardPile discardPile;
     public Deck deck;
+    GameObject cardToDestroy;
 
     public void RoundEnd()
     {
         numberOfCards = cards.Count;
-
+        
         for (int h = 0; h < numberOfCards; h++)
         {
             discardPile.discardPile.Add(cards[0]);
-            cards.Remove(cards[0]);
+            cardToDestroy = cards[0];
+            Destroy(cardToDestroy.gameObject);
+            //cards.Remove(cards[0]);
         }
+        cards.Clear();
         if(deck.numberOfCards<5)
         {
             discardPile.ShuffleDiscard();

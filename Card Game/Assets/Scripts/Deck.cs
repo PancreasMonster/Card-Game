@@ -36,8 +36,12 @@ public class Deck : MonoBehaviour
     //Removes the top 5 cards from the deckand adds them to the hand(childing them to the hand object)
     public void DrawHand()
     {
+        Vector3 cardPosition = hand.transform.position;
         for (int c = 0; c < handSize; c++)
         {
+            GameObject firstCard = Instantiate(cards[0], new Vector3(cardPosition.x + (c - 1), cardPosition.y, cardPosition.z), Quaternion.identity).gameObject;
+            firstCard.transform.rotation = Quaternion.Euler(0, -90, -90);
+            firstCard.transform.parent = hand.gameObject.transform;
             hand.cards.Add(cards[0]);
             cards.Remove(cards[0]);
             numberOfCards--;
