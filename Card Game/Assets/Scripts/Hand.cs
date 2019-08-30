@@ -29,6 +29,11 @@ public class Hand : MonoBehaviour
     public Deck deck;
     GameObject cardToDestroy;
 
+    IEnumerator Waiter(GameObject card)
+    {
+        yield return new WaitUntil(() => card.GetComponent<Card>().moving == false);
+    }
+
     public void RoundEnd()
     {
         numberOfCards = cards.Count;
@@ -36,20 +41,29 @@ public class Hand : MonoBehaviour
         for (int i = 0; i < numberOfCards; i++)
         {
             Vector3 discardPosition = new Vector3(discardPile.transform.position.x, discardPile.transform.position.y + (0.2f*(i + discardSize)), discardPile.transform.position.z);
-            GameObject firstCard = cards[0];
-            firstCard.transform.position = discardPosition;
-            firstCard.transform.rotation = Quaternion.Euler(-180, 90, -90);
-            firstCard.transform.parent = discardPile.gameObject.transform;
-            discardPile.cards.Add(firstCard);
-            //Destroy(cards[0].gameObject);
+            GameObject currentCard = cards[0];
+            StartCoroutine(Waiter(currentCard));
+            currentCard.GetComponent<Card>().target = discardPosition;
+            currentCard.GetComponent<Card>().moving = true;
+            StartCoroutine(Waiter(currentCard));
+
+            currentCard.transform.rotation = Quaternion.Euler(-180, 90, -90);
+            currentCard.transform.parent = discardPile.gameObject.transform;
+
+
+            discardPile.cards.Add(currentCard);
             cards.Remove(cards[0]);
+
         }
-        if(deck.numberOfCards<5)
+        if (deck.numberOfCards<5)
         {
+            
             discardPile.ShuffleDiscard();
             deck.DrawDiscard();
         }
         deck.DrawHand();
         endRound = false;
     }
+
+
 }
