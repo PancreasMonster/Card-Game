@@ -32,15 +32,18 @@ public class Hand : MonoBehaviour
     public void RoundEnd()
     {
         numberOfCards = cards.Count;
-        
-        for (int h = 0; h < numberOfCards; h++)
+        float discardSize = discardPile.cards.Count;
+        for (int i = 0; i < numberOfCards; i++)
         {
-            cardToDestroy = cards[0];
-            discardPile.discardPile.Add(cardToDestroy.gameObject);
-            Destroy(cardToDestroy.gameObject);
-            //cards.Remove(cards[0]);
+            Vector3 discardPosition = new Vector3(discardPile.transform.position.x, discardPile.transform.position.y + (0.2f*(i + discardSize)), discardPile.transform.position.z);
+            GameObject firstCard = cards[0];
+            firstCard.transform.position = discardPosition;
+            firstCard.transform.rotation = Quaternion.Euler(-180, 90, -90);
+            firstCard.transform.parent = discardPile.gameObject.transform;
+            discardPile.cards.Add(firstCard);
+            //Destroy(cards[0].gameObject);
+            cards.Remove(cards[0]);
         }
-        cards.Clear();
         if(deck.numberOfCards<5)
         {
             discardPile.ShuffleDiscard();

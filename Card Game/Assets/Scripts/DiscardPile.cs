@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DiscardPile : MonoBehaviour
 {
-    public List<GameObject> discardPile;
+    public List<GameObject> cards;
 //    private static CardManager cardManager;
     // Start is called before the first frame update
     void Start()
@@ -22,11 +22,7 @@ public class DiscardPile : MonoBehaviour
 
     public void ShuffleDiscard()
     {
-        Debug.Log("before shuffle " + discardPile.Count);
-
         System.Random rnd = new System.Random();
-        Shuffle.ShuffleList(discardPile, rnd);          //shuffle discard pile
-        Debug.Log("after shuffle " + discardPile.Count);
-
+        Shuffle.ShuffleList(cards, rnd);          //shuffle discard pile
     }
 }
