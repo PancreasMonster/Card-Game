@@ -1447,12 +1447,12 @@ PrefabInstance:
     - target: {fileID: 1369224142673215697, guid: d26ae726b1b3aed44b5c10ae0ad64e5f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.76923704
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 1369224142673215697, guid: d26ae726b1b3aed44b5c10ae0ad64e5f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.1581764
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1369224142673215697, guid: d26ae726b1b3aed44b5c10ae0ad64e5f,
         type: 3}
@@ -2554,7 +2554,7 @@ PrefabInstance:
     - target: {fileID: 2722443755877234675, guid: ae0b543d5532ea845b12f089da15bbad,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 2722443755877234675, guid: ae0b543d5532ea845b12f089da15bbad,
         type: 3}
@@ -2693,17 +2693,17 @@ PrefabInstance:
     - target: {fileID: 2117095697138581294, guid: bfc8e138940cfd6499d5293ac0debf67,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.66
+      value: -2.25
       objectReference: {fileID: 0}
     - target: {fileID: 2117095697138581294, guid: bfc8e138940cfd6499d5293ac0debf67,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.72898483
+      value: 0.4
       objectReference: {fileID: 0}
     - target: {fileID: 2117095697138581294, guid: bfc8e138940cfd6499d5293ac0debf67,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.16
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2117095697138581294, guid: bfc8e138940cfd6499d5293ac0debf67,
         type: 3}
@@ -2728,7 +2728,7 @@ PrefabInstance:
     - target: {fileID: 2117095697138581294, guid: bfc8e138940cfd6499d5293ac0debf67,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2117095697138581294, guid: bfc8e138940cfd6499d5293ac0debf67,
         type: 3}
