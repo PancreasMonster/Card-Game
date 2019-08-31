@@ -5,11 +5,10 @@ using UnityEngine;
 public class DiscardPile : MonoBehaviour
 {
     public List<GameObject> cards;
-//    private static CardManager cardManager;
     // Start is called before the first frame update
     void Start()
     {
-//           cardManager = FindObjectOfType<CardManager>();
+
     }
 
     // Update is called once per frame

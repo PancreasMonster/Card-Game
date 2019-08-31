@@ -64,10 +64,8 @@ public class Hand : MonoBehaviour
             
             discardPile.ShuffleDiscard();
             deck.StartCoroutine(deck.DrawDiscard());
-           // deck.DrawDiscard();
         }
         deck.StartCoroutine(deck.DrawHand());
-        //deck.DrawHand();
         endRound = false;
     }
 

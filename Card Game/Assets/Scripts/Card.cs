@@ -31,13 +31,11 @@ public class Card : MonoBehaviour
         current = transform.position;
         if (moving == true)
         {
-            print("moving...");
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target, step);
         }
         if (current == transform.position)
         {
-           // print("Stopped Moving");
             moving = false;
         }
     }
