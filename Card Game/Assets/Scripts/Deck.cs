@@ -20,7 +20,7 @@ public class Deck : MonoBehaviour
         Vector3 cardPosition;
         for (int i = 0; i < numberOfCards; i++)
         {
-            cardPosition = new Vector3(deckPosition.x, deckPosition.y + (0.2f * i), deckPosition.z);
+            cardPosition = new Vector3(deckPosition.x, deckPosition.y, deckPosition.z);
             GameObject card = Instantiate(cards[i], cardPosition, Quaternion.identity).gameObject;
             card.GetComponent<Card>().target = cardPosition;
             card.transform.rotation = (Quaternion.Euler(-180, 90, -90));
@@ -74,7 +74,7 @@ public class Deck : MonoBehaviour
     {
         for (int i = 0; i < discardPile.cards.Count; i++)
         {
-            Vector3 deckPosition = new Vector3(this.transform.position.x, this.transform.position.y + (0.2f * i), this.transform.position.z);
+            Vector3 deckPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
             GameObject currentCard = discardPile.cards[i];
 
             currentCard.GetComponent<Card>().target = deckPosition;

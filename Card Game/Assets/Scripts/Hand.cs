@@ -41,7 +41,7 @@ public class Hand : MonoBehaviour
         float discardSize = discardPile.cards.Count;
         for (int i = 0; i < numberOfCards; i++)
         {
-            Vector3 discardPosition = new Vector3(discardPile.transform.position.x, discardPile.transform.position.y + (0.2f*(i + discardSize)), discardPile.transform.position.z);
+            Vector3 discardPosition = new Vector3(discardPile.transform.position.x, discardPile.transform.position.y, discardPile.transform.position.z);
             GameObject currentCard = cards[0];
             currentCard.GetComponent<Card>().target = discardPosition;
             currentCard.GetComponent<Card>().moving = true;

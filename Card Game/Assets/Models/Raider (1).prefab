@@ -213,7 +213,10 @@ MonoBehaviour:
   defense: 0
   cardText: 
   flavorText: 
+  current: {x: 0, y: 0, z: 0}
   target: {x: 0, y: 0, z: 0}
+  speed: 100
+  moving: 0
 --- !u!1 &4012241863107017681
 GameObject:
   m_ObjectHideFlags: 0

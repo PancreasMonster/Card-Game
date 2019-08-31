@@ -17,7 +17,7 @@ public class Card : MonoBehaviour
 
     public Vector3 current;
     public Vector3 target;
-    public float speed = 10.0f;
+    public float speed = 100.0f;
     public bool moving = false;
 
     void Start()
