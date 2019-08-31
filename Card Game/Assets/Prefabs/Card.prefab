@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7798282826821185305}
   - component: {fileID: 1614545187793858789}
   - component: {fileID: 5062773029312575190}
+  - component: {fileID: -6284884213422359950}
+  - component: {fileID: -9188883304037598928}
   m_Layer: 0
   m_Name: Card
   m_TagString: Untagged
@@ -57,6 +59,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   speed: 100
   moving: 0
+  hand: 0
 --- !u!114 &5062773029312575190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,6 +73,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hand: 0
+--- !u!114 &-6284884213422359950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5130973325519338727}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18b0ec969b6cfb94bbd4f5faf258bf01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dragging: 0
+--- !u!65 &-9188883304037598928
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5130973325519338727}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.27231753, y: 3.2474425, z: 2.2570643}
+  m_Center: {x: 0.026461184, y: -0.24916396, z: -0.17201257}
 --- !u!1001 &821047150617321098
 PrefabInstance:
   m_ObjectHideFlags: 0

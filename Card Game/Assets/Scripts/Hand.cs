@@ -46,6 +46,7 @@ public class Hand : MonoBehaviour
             currentCard.GetComponent<CardMovement>().target = discardPosition;
             currentCard.GetComponent<CardMovement>().moving = true;
 
+            currentCard.GetComponent<CardMovement>().hand = false;
             currentCard.GetComponent<CardRotation>().hand = false;
             while (currentCard.GetComponent<CardMovement>().moving)
             {

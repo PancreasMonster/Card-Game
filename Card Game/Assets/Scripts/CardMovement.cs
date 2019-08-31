@@ -19,6 +19,7 @@ public class CardMovement : MonoBehaviour
     public Vector3 target;
     public float speed = 100.0f;
     public bool moving = false;
+    public bool hand = false;
 
     void Start()
     {
@@ -29,7 +30,7 @@ public class CardMovement : MonoBehaviour
     void Update()
     {
         current = transform.position;
-        if (moving == true)
+        if ((moving == true) || (this.GetComponent<DragObject>().dragging == false))
         {
 
             float step = speed * Time.deltaTime;

@@ -56,6 +56,7 @@ public class Deck : MonoBehaviour
                 currentCard.GetComponent<CardMovement>().moving = true;
             }
 
+            currentCard.GetComponent<CardMovement>().hand = true;
             currentCard.GetComponent<CardRotation>().hand = true;
 
             while (currentCard.GetComponent<CardMovement>().moving)
@@ -63,10 +64,7 @@ public class Deck : MonoBehaviour
                 yield return new WaitForEndOfFrame();
             }
 
-
-            //currentCard.transform.rotation = Quaternion.Euler(0, -90, -90);
             currentCard.transform.parent = hand.gameObject.transform;
-
 
             hand.cards.Add(currentCard);
             cards.Remove(cards[cardCount - i-1]);
