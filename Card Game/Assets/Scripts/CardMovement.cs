@@ -20,10 +20,11 @@ public class CardMovement : MonoBehaviour
     public float speed = 100.0f;
     public bool moving = false;
     public bool hand = false;
+    public float height;
 
     void Start()
     {
-
+        height = transform.position.y;
     }
 
     // Update is called once per frame
@@ -32,10 +33,8 @@ public class CardMovement : MonoBehaviour
         current = transform.position;
         if ((moving == true) || (this.GetComponent<DragObject>().dragging == false))
         {
-
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target, step);
-
         }
         if (current == transform.position)
         {

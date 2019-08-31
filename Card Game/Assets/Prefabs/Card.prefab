@@ -86,6 +86,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragging: 0
+  smoothTime: 0.055
 --- !u!65 &-9188883304037598928
 BoxCollider:
   m_ObjectHideFlags: 0

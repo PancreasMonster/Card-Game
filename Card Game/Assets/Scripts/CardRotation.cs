@@ -18,6 +18,7 @@ public class CardRotation : MonoBehaviour
     {
         if (hand) target = Quaternion.Euler(0, -90, -90);
         else target = Quaternion.Euler(0, 90, 90);
+
         float speed = 10F;
         transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * speed);
     }

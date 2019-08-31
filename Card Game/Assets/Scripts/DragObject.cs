@@ -10,21 +10,19 @@ public class DragObject : MonoBehaviour
     private Vector3 mOffset;
     private float mZCoord;
     public bool dragging = false;
+    public float smoothTime = 0.055F;
+    private Vector3 velocity = Vector3.zero;
 
     void OnMouseDown()
     {     
         mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
-        // Store offset = gameobject world pos - mouse world pos
         mOffset = gameObject.transform.position - GetMouseAsWorldPoint();
     }
 
     private Vector3 GetMouseAsWorldPoint()
     {
-        // Pixel coordinates of mouse (x,y)
         Vector3 mousePoint = Input.mousePosition;
-        // z coordinate of game object on screen
         mousePoint.z = mZCoord;
-        // Convert it to world points
         return Camera.main.ScreenToWorldPoint(mousePoint);
     }
 
@@ -34,7 +32,13 @@ public class DragObject : MonoBehaviour
     }
     void OnMouseDrag()
     {
-        dragging = true;
-        transform.position = GetMouseAsWorldPoint() + mOffset;
+        if (this.GetComponent<CardRotation>().hand == true)
+        {
+            dragging = true;
+            Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, mZCoord);
+            Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + mOffset;
+            curPosition.y += 0.4f;
+            transform.position = Vector3.SmoothDamp(transform.position, curPosition, ref velocity, smoothTime);
+        }
     }
 }
