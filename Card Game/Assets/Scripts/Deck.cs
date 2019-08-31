@@ -22,8 +22,8 @@ public class Deck : MonoBehaviour
         {
             cardPosition = new Vector3(deckPosition.x, deckPosition.y, deckPosition.z);
             GameObject card = Instantiate(cards[i], cardPosition, Quaternion.identity).gameObject;
-            card.GetComponent<Card>().target = cardPosition;
-            card.transform.rotation = (Quaternion.Euler(-180, 90, -90));
+            card.GetComponent<CardMovement>().target = cardPosition;
+            card.transform.rotation = (Quaternion.Euler(0, 90, 90));
             card.transform.parent = this.gameObject.transform;
             cards[i] = card;
         }
@@ -50,18 +50,21 @@ public class Deck : MonoBehaviour
         {
             Vector3 cardPosition = new Vector3(hand.transform.position.x + (i - 1), hand.transform.position.y, hand.transform.position.z);
             GameObject currentCard = cards[cardCount - i - 1];
-            if (currentCard.GetComponent<Card>().moving == false)
+            if (currentCard.GetComponent<CardMovement>().moving == false)
             {
-                currentCard.GetComponent<Card>().target = cardPosition;
-                currentCard.GetComponent<Card>().moving = true;
+                currentCard.GetComponent<CardMovement>().target = cardPosition;
+                currentCard.GetComponent<CardMovement>().moving = true;
             }
 
-            while (currentCard.GetComponent<Card>().moving)
+            currentCard.GetComponent<CardRotation>().hand = true;
+
+            while (currentCard.GetComponent<CardMovement>().moving)
             {
                 yield return new WaitForEndOfFrame();
             }
 
-            currentCard.transform.rotation = Quaternion.Euler(0, -90, -90);
+
+            //currentCard.transform.rotation = Quaternion.Euler(0, -90, -90);
             currentCard.transform.parent = hand.gameObject.transform;
 
 
@@ -81,14 +84,15 @@ public class Deck : MonoBehaviour
             Vector3 deckPosition = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
             GameObject currentCard = discardPile.cards[i];
 
-            currentCard.GetComponent<Card>().target = deckPosition;
-            currentCard.GetComponent<Card>().moving = true;
+            currentCard.GetComponent<CardMovement>().target = deckPosition;
+            currentCard.GetComponent<CardMovement>().moving = true;
+            currentCard.GetComponent<CardRotation>().hand = false;
 
-            while (currentCard.GetComponent<Card>().moving)
+            while (currentCard.GetComponent<CardMovement>().moving)
             {
                 yield return new WaitForEndOfFrame();
             }
-            currentCard.transform.rotation = Quaternion.Euler(-180, 90, -90);
+            //currentCard.transform.rotation = Quaternion.Euler(-180, 90, -90);
             currentCard.transform.parent = this.gameObject.transform;
 
 

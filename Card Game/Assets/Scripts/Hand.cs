@@ -32,7 +32,7 @@ public class Hand : MonoBehaviour
 
     IEnumerator Waiter(GameObject card)
     {
-        yield return new WaitUntil(() => card.GetComponent<Card>().moving == false);
+        yield return new WaitUntil(() => card.GetComponent<CardMovement>().moving == false);
     }
 
     public IEnumerator RoundEnd()
@@ -43,15 +43,16 @@ public class Hand : MonoBehaviour
         {
             Vector3 discardPosition = new Vector3(discardPile.transform.position.x, discardPile.transform.position.y, discardPile.transform.position.z);
             GameObject currentCard = cards[0];
-            currentCard.GetComponent<Card>().target = discardPosition;
-            currentCard.GetComponent<Card>().moving = true;
+            currentCard.GetComponent<CardMovement>().target = discardPosition;
+            currentCard.GetComponent<CardMovement>().moving = true;
 
-            while (currentCard.GetComponent<Card>().moving)
+            currentCard.GetComponent<CardRotation>().hand = false;
+            while (currentCard.GetComponent<CardMovement>().moving)
             {
                 yield return new WaitForEndOfFrame();
             }
 
-            currentCard.transform.rotation = Quaternion.Euler(-180, 90, -90);
+            //currentCard.transform.rotation = Quaternion.Euler(-180, 90, -90);
             currentCard.transform.parent = discardPile.gameObject.transform;
 
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Card : MonoBehaviour
+public class CardMovement : MonoBehaviour
 {
     public string Name;
     public int Cost;
@@ -31,8 +31,10 @@ public class Card : MonoBehaviour
         current = transform.position;
         if (moving == true)
         {
+
             float step = speed * Time.deltaTime;
             transform.position = Vector3.MoveTowards(transform.position, target, step);
+
         }
         if (current == transform.position)
         {
