@@ -37,7 +37,7 @@ public class Card : MonoBehaviour
         }
         if (current == transform.position)
         {
-            print("Stopped Moving");
+           // print("Stopped Moving");
             moving = false;
         }
     }

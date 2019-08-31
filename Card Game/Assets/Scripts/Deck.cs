@@ -27,6 +27,7 @@ public class Deck : MonoBehaviour
             card.transform.parent = this.gameObject.transform;
             cards[i] = card;
         }
+        StartCoroutine(DrawHand());
         //DrawHand();
     }
 
@@ -38,22 +39,25 @@ public class Deck : MonoBehaviour
 
     public Hand hand;
     //Removes the top 5 cards from the deckand adds them to the hand(childing them to the hand object)
-    public void DrawHand()
+    public IEnumerator DrawHand()
     {
-
+        print("benis");
         int cardCount = cards.Count;
         for (int i = 0; i < handSize; i++)
         {
             Vector3 cardPosition = new Vector3(hand.transform.position.x + (i - 1), hand.transform.position.y, hand.transform.position.z);
             GameObject currentCard = cards[cardCount - i - 1];
-            StartCoroutine(Waiter(currentCard));
+            //StartCoroutine(Waiter(currentCard));
             if (currentCard.GetComponent<Card>().moving == false)
             {
                 currentCard.GetComponent<Card>().target = cardPosition;
                 currentCard.GetComponent<Card>().moving = true;
             }
 
-            StartCoroutine(Waiter(currentCard));
+            while (currentCard.GetComponent<Card>().moving)
+            {
+                yield return new WaitForEndOfFrame();
+            }
 
             currentCard.transform.rotation = Quaternion.Euler(0, -90, -90);
             currentCard.transform.parent = hand.gameObject.transform;
@@ -65,23 +69,21 @@ public class Deck : MonoBehaviour
         }
     }
 
-    IEnumerator Waiter(GameObject card)
-    {
-        yield return new WaitUntil(() => card.GetComponent<Card>().moving == false);
-    }
 
-    public void DrawDiscard()
+    public IEnumerator DrawDiscard()
     {
         for (int i = 0; i < discardPile.cards.Count; i++)
         {
             Vector3 deckPosition = new Vector3(this.transform.position.x, this.transform.position.y + (0.2f * i), this.transform.position.z);
             GameObject currentCard = discardPile.cards[i];
 
-            StartCoroutine(Waiter(currentCard));
             currentCard.GetComponent<Card>().target = deckPosition;
             currentCard.GetComponent<Card>().moving = true;
-            StartCoroutine(Waiter(currentCard));
 
+            while (currentCard.GetComponent<Card>().moving)
+            {
+                yield return new WaitForEndOfFrame();
+            }
             currentCard.transform.rotation = Quaternion.Euler(-180, 90, -90);
             currentCard.transform.parent = this.gameObject.transform;
 

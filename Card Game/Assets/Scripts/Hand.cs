@@ -21,7 +21,8 @@ public class Hand : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && endRound == false)
         { 
             endRound = true;
-            RoundEnd();
+            StartCoroutine(RoundEnd());
+            //RoundEnd();
         }
     }
 
@@ -34,7 +35,7 @@ public class Hand : MonoBehaviour
         yield return new WaitUntil(() => card.GetComponent<Card>().moving == false);
     }
 
-    public void RoundEnd()
+    public IEnumerator RoundEnd()
     {
         numberOfCards = cards.Count;
         float discardSize = discardPile.cards.Count;
@@ -42,10 +43,13 @@ public class Hand : MonoBehaviour
         {
             Vector3 discardPosition = new Vector3(discardPile.transform.position.x, discardPile.transform.position.y + (0.2f*(i + discardSize)), discardPile.transform.position.z);
             GameObject currentCard = cards[0];
-            StartCoroutine(Waiter(currentCard));
             currentCard.GetComponent<Card>().target = discardPosition;
             currentCard.GetComponent<Card>().moving = true;
-            StartCoroutine(Waiter(currentCard));
+
+            while (currentCard.GetComponent<Card>().moving)
+            {
+                yield return new WaitForEndOfFrame();
+            }
 
             currentCard.transform.rotation = Quaternion.Euler(-180, 90, -90);
             currentCard.transform.parent = discardPile.gameObject.transform;
@@ -59,9 +63,11 @@ public class Hand : MonoBehaviour
         {
             
             discardPile.ShuffleDiscard();
-            deck.DrawDiscard();
+            deck.StartCoroutine(deck.DrawDiscard());
+           // deck.DrawDiscard();
         }
-        deck.DrawHand();
+        deck.StartCoroutine(deck.DrawHand());
+        //deck.DrawHand();
         endRound = false;
     }
 
