@@ -13,10 +13,10 @@ public class UnitDisplay : MonoBehaviour
 
     public Image artworkImage;
 
-    public Text costText;
     public Text attackText;
     public Text defenseText;
 
+    public GameObject[] productionCogs;
 
     void Start()
     {
@@ -25,9 +25,13 @@ public class UnitDisplay : MonoBehaviour
 
         artworkImage.sprite = unit.artwork;
 
-        costText.text = unit.Cost.ToString();
         attackText.text = unit.attack.ToString();
         defenseText.text = unit.defense.ToString();
+
+        for (int i = 0; i < unit.Cost; i++)
+        {
+            productionCogs[i].SetActive(true);
+        }
     }
 
 }

@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: Shipbuilders
   m_EditorClassIdentifier: Assembly-CSharp::Unit
   name: Shipbuilders
-  description: 'Active: +2 attack to adjacent units Passive: +1 Production'
+  description: 'Active: +2 attack to adjacent units.
+
+
+    Passive: +1 Production'
   artwork: {fileID: 0}
   Cost: 1
   attack: 6

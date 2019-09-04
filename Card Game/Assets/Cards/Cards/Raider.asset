@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Raider
   m_EditorClassIdentifier: Assembly-CSharp::Unit
   name: Raider
-  description: 'Active: +1 Gold'
+  description: 'Active: +1 Gold.'
   artwork: {fileID: 21300000, guid: 633f7a64cc6cc414e8082cad5726feb6, type: 3}
   Cost: 1
   attack: 12
