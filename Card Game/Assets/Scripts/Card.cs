@@ -7,6 +7,7 @@ using UnityEngine;
 public class Unit : ScriptableObject
 {
     public new string name;
+    [TextArea]
     public string description;
 
     public Sprite artwork;
@@ -20,6 +21,7 @@ public class Unit : ScriptableObject
 public class Action : ScriptableObject
 {
     public new string name;
+    [TextArea]
     public string description;
 
     public Sprite artwork;
